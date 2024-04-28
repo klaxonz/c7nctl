@@ -80,7 +80,7 @@ spec:
         values:
       - name: minio
         chart: minio
-        version: 5.0.5
+        version: 5.0.9
         resource:
           host: minio
           port: 9000
