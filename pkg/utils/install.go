@@ -16,7 +16,7 @@ const (
 	InstallConfigPath = "install.yml"
 	UpgradeConfigPath = "upgrade.yml"
 
-	githubResourceUrl = "https://raw.githubusercontent.com/klaxonz/c7nctl@%s/manifests/%s"
+	githubResourceUrl = "https://raw.githubusercontent.com/klaxonz/c7nctl/%s/manifests/%s"
 	fileResourceUrl   = "https://file.choerodon.com.cn/choerodon-install/%s/%s"
 )
 
