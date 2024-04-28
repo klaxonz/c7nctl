@@ -15,3 +15,8 @@ ingress:
   enabled: true
 sonarqubePassword: "password"
 sonarqubeUsername: admin
+
+plugins:
+  enabled: true
+  commandOverride: |
+    mkdir -p /bitnami/sonarqube/extensions/plugins
