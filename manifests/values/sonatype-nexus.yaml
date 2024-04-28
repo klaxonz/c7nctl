@@ -6,5 +6,4 @@ ingress:
   enabled: true
   tls:
     enabled: false
-initAdminPassword:
-  enabled: true
+
