@@ -5,7 +5,7 @@ mcImage:
    repository: {{ .GetImageRepository }}/mc
 {{- end }}
 
-mode: distributed
+mode: standalone
 persistence:
   enabled: true
   storageClass: {{ .GetStorageClass }}
