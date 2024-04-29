@@ -19,5 +19,4 @@ sonarqubeUsername: admin
 plugins:
   enabled: true
   commandOverride: |
-    mkdir -p /opt/bitnami/sonarqube/data
-    mkdir -p /bitnami/sonarqube/extensions/plugins
+    mkdir -p /bitnami/sonarqube/extensions/plugins && mkdir -p /opt/bitnami/sonarqube/data
