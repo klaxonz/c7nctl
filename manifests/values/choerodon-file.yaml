@@ -22,6 +22,18 @@ extraEnv:
   SPRING_DATASOURCE_URL: {{ .GetDatabaseUrl "hzero_file" }}
   SPRING_DATASOURCE_USERNAME: choerodon
   SPRING_DATASOURCE_PASSWORD: password
+  SPRING_SERVLET_MULTIPART_MAX_FILE_SIZE: 200MB
+  SPRING_SERVLET_MULTIPART_MAX_REQUEST_SIZE: 200MB
   FILE_GATEWAY_URL: {{ .GetResourceDomainUrl "choerodon-gateway" }}/hfle
   MINIO_ACCESSKEY: {{ .GetReleaseValue "minio" "accessKey" }}
+  MINIO_SECRETKEY: {{ .GetReleaseValue "minio" "secretKey" }}
   MINIO_ENDPOINT: {{ .GetResourceDomainUrl "minio" }}
+{{- if .IsThinMode }}
+resources:
+  limits:
+    # cpu: 100m
+    memory: 1Gi
+  requests:
+    # cpu: 100m
+    memory: 1Gi
+{{- end }}
