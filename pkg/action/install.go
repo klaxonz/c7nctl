@@ -162,6 +162,7 @@ func (i *Install) InstallReleases(inst *resource.InstallDefinition) error {
 		}
 		vals, err := inst.RenderHelmValues(rls, rr)
 		if err != nil {
+			log.Errorf("RenderHelValues failed: , values: %s, %s", vals, err)
 			return err
 		}
 
