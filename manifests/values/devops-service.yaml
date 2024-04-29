@@ -60,12 +60,3 @@ extraEnv:
 ingress:
   enabled: true
 
-{{- if .IsThinMode }}
-resources:
-  limits:
-    # cpu: 100m
-    memory: 1Gi
-  requests:
-    # cpu: 100m
-    memory: 1Gi
-{{- end }}
