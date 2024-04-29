@@ -224,7 +224,7 @@ spec:
                   name: "不能为纯数字"
       - name: sonarqube
         chart: sonarqube
-        version: 1.0.6
+        version: 9.3.0
         resource:
           schema: "http"
           host: '{{ .GetReleaseName "sonarqube" }}-postgresql'
