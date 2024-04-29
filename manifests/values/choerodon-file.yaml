@@ -25,4 +25,3 @@ extraEnv:
   FILE_GATEWAY_URL: {{ .GetResourceDomainUrl "choerodon-gateway" }}/hfle
   MINIO_ACCESSKEY: {{ .GetReleaseValue "minio" "accessKey" }}
   MINIO_ENDPOINT: {{ .GetResourceDomainUrl "minio" }}
-  MINIO_SECRETKEY: {{ .GetReleaseValue "minio" "secretKey" }}
