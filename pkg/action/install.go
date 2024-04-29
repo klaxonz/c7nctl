@@ -157,12 +157,12 @@ func (i *Install) InstallReleases(inst *resource.InstallDefinition) error {
 
 		rvurl := fmt.Sprintf("/%s/%s.yaml", c7nconsts.DefaultHelmValuesPath, rls.Name)
 		rr, err := i.ResourceClient.GetResource(i.Version, rvurl)
+		log.Debugf("Get redern values  %s", rr)
 		if err != nil {
 			return err
 		}
 		vals, err := inst.RenderHelmValues(rls, rr)
 		if err != nil {
-			log.Errorf("RenderHelValues failed: , values: %s, %s", vals, err)
 			return err
 		}
 

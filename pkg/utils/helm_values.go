@@ -3,6 +3,7 @@ package utils
 import (
 	"fmt"
 	"github.com/ghodss/yaml"
+	log "github.com/sirupsen/logrus"
 	"helm.sh/helm/v3/pkg/strvals"
 )
 
@@ -36,12 +37,14 @@ func mergeValues(dest map[string]interface{}, src map[string]interface{}) map[st
 // vals merges values from files specified via -f/--values and
 // directly via --set or --set-string or --set-file, marshaling them to YAML
 func Vals(values []string, fileValues string) (map[string]interface{}, error) {
+	log.Debugf("fileValues: %s, values: %v", fileValues, values)
 	base := map[string]interface{}{}
 
 	// User specified a values files via -f/--values
 	currentMap := map[string]interface{}{}
 
 	if err := yaml.Unmarshal([]byte(fileValues), &currentMap); err != nil {
+		log.Debugf("fileValues: %s, currentMap:  %#v", fileValues, values)
 		return nil, fmt.Errorf("failed to parse %s", err)
 	}
 	// Merge with the previous map
