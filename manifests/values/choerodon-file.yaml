@@ -28,12 +28,3 @@ extraEnv:
   MINIO_ACCESSKEY: {{ .GetReleaseValue "minio" "accessKey" }}
   MINIO_ENDPOINT: {{ .GetResourceDomainUrl "minio" }}
   MINIO_SECRETKEY: {{ .GetReleaseValue "minio" "secretKey" }}
-{{- if .IsThinMode }}
-resources:
-  limits:
-    # cpu: 100m
-    memory: 1Gi
-  requests:
-    # cpu: 100m
-    memory: 1Gi
-{{- end }}
